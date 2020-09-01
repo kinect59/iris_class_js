@@ -8,7 +8,7 @@ const test_data = tf.tensor2d([[6.7, 2.5, 5.8, 1.8]]);
   model.summary();
   y = model.predict(tf.tensor2d([[6.7, 2.5, 5.8, 1.8]]))
   y_pred = y.argMax(axis=-1)
-  document.getElementById('out').innerHTML = y_pred.dataSync()
+  document.getElementById('out').innerHTML = y_pred.dataSync()[0]
   //document.getElementById('micro-out-div').innerText = model.predict(tf.tensor2d([[6.7, 2.5, 5.8, 1.8]])).argMax().dataSync();
   //y = model.predict(tf.zeros([1,2])) 
   //document.getElementById('out').innerHTML = y.dataSync()[0]
