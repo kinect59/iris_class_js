@@ -68,8 +68,9 @@ train_test();
 
 // Tiny TFJS train / predict example.
 async function laod_and_test() {
- 
-  model = await tf.loadLayersModel('XOR/web_model/model.json').then(model => {
+const test_data = tf.tensor2d([[6.7, 2.5, 5.8, 1.8]]); 
+  
+  model = await tf.loadLayersModel('web_model/model.json').then(model => {
   
   model.summary();
   document.getElementById('micro-out-div').innerText = model.predict(tf.zeros([1,2])).dataSync();
